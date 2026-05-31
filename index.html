@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.3.0' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <title><data:blog.pageTitle/></title>
+    <meta content='NewsFactsBoom delivers the latest breaking news, trending stories, viral updates, and informative articles from around the world.' name='description'/>
+    <meta content='Breaking News, Trending News, Viral Stories, World News, Latest Updates, NewsFactsBoom' name='keywords'/>
+    <meta content='NewsFactsBoom Team' name='author'/>
+    <meta content='index, follow, max-snippet:-1, max-image-preview:large' name='robots'/>
+    <meta content='website' property='og:type'/>
+    <meta content='NewsFactsBoom - Latest Breaking News &amp; Trending Stories' property='og:title'/>
+    <meta content='NewsFactsBoom delivers the latest breaking news, trending stories, viral updates, and informative articles from around the world.' property='og:description'/>
+    <meta content='NewsFactsBoom' property='og:site_name'/>
+    <meta content='summary_large_image' property='twitter:card'/>
+    <meta content='NewsFactsBoom - Latest Breaking News &amp; Trending Stories' property='twitter:title'/>
+    <meta content='NewsFactsBoom delivers the latest breaking news, trending stories, viral updates, and informative articles from around the world.' property='twitter:description'/>
+    <meta content='#e63946' name='theme-color'/>
+    <b:include data='blog' name='all-head-content'/>
+    
+    <!-- Font Awesome -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap' rel='stylesheet'/>
+
+    <!-- ✅ Popunder Ad -->
+    <script src='https://socialconventcontext.com/04/b3/79/04b379349d45e7c10ffbb90554852db1.js'></script>
+
+    <b:skin><![CDATA[
+    :root {
+        --bg-color: #f4f7fc;
+        --primary-color: #e63946;
+        --secondary-color: #ff6b6b;
+        --accent-color: #1d3557;
+        --text-color: #333;
+        --light-text-color: #666;
+        --card-bg: rgba(255, 255, 255, 0.45);
+        --card-border: rgba(255, 255, 255, 0.9);
+        --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        --border-radius: 16px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+    body {
+        font-family:'Poppins',sans-serif;
+        background-color:var(--bg-color);
+        color:var(--text-color);
+        line-height:1.7;
+        overflow-x:hidden;
+        position:relative;
+    }
+    .background-shapes { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; overflow:hidden; }
+    .shape { position:absolute; border-radius:50%; opacity:0.12; }
+    .shape1 { width:400px; height:400px; background:#ffb3b3; top:-100px; left:-100px; animation:move 25s infinite alternate ease-in-out; }
+    .shape2 { width:500px; height:500px; background:#b3d4ff; bottom:-150px; right:-150px; animation:move 30s infinite alternate ease-in-out; }
+    @keyframes move { from { transform:translate(0,0) rotate(0deg); } to { transform:translate(100px,150px) rotate(90deg); } }
+    #particle-container { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:9999; }
+    .particle { position:absolute; border-radius:50%; background:var(--primary-color); opacity:0.8; }
+    #progress-scroller { position:fixed; top:0; left:0; height:5px; background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); width:0%; z-index:1000; transition:width 0.1s linear; }
+    .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+    .glass-card { background:var(--card-bg); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-radius:var(--border-radius); border:1px solid var(--card-border); box-shadow:var(--shadow); padding:2.5rem; transition:transform 0.3s ease,box-shadow 0.3s ease; }
+    .glass-card:hover { transform:translateY(-8px) scale(1.02); box-shadow:0 12px 40px 0 rgba(31,38,135,0.15); }
+    .header { position:fixed; top:20px; left:50%; transform:translateX(-50%); width:95%; max-width:1200px; z-index:500; border-radius:var(--border-radius); padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.6); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid var(--card-border); box-shadow:var(--shadow); transition:top 0.3s ease,padding 0.3s ease; }
+    .header.scrolled { top:10px; padding:0.75rem 2rem; background:rgba(255,255,255,0.75); }
+    .header .logo { font-size:1.5rem; font-weight:700; color:var(--primary-color); text-decoration:none; }
+    .header .logo span { color:var(--accent-color); }
+    .header .nav a { margin-left:2rem; text-decoration:none; color:var(--text-color); font-weight:500; position:relative; transition:color 0.3s ease; }
+    .header .nav a::after { content:''; position:absolute; width:0; height:2px; bottom:-5px; left:0; background-color:var(--primary-color); transition:width 0.3s ease; }
+    .header .nav a:hover { color:var(--primary-color); }
+    .header .nav a:hover::after { width:100%; }
+    .dropdown { display:inline-block; position:relative; }
+    .dropdown-content { display:none; position:absolute; background:white; min-width:200px; box-shadow:var(--shadow); border-radius:12px; padding:10px; top:100%; left:2rem; }
+    .dropdown:hover .dropdown-content { display:block!important; animation:fadeIn 0.3s ease; }
+    .dropdown-content a { display:block; margin:10px 0; font-size:0.85rem; color:var(--text-color)!important; text-decoration:none; }
+    .dropdown-content a:hover { color:var(--primary-color)!important; }
+    .menu-toggle { display:none; cursor:pointer; background:none; border:none; }
+    section { padding:120px 0; }
+    .section-title { text-align:center; font-size:2.5rem; font-weight:700; margin-bottom:1rem; color:var(--text-color); }
+    .section-subtitle { text-align:center; max-width:600px; margin:0 auto 4rem auto; color:var(--light-text-color); }
+    #home { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding-top:150px; }
+    #home h1 { font-size:3.5rem; font-weight:700; background:linear-gradient(90deg,var(--primary-color),var(--accent-color)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:1rem; }
+    #home p { font-size:1.25rem; color:var(--light-text-color); margin-bottom:2.5rem; max-width:700px; margin-left:auto; margin-right:auto; }
+    .cta-button { display:inline-block; background:linear-gradient(90deg,var(--primary-color),var(--secondary-color)); color:#fff; padding:1rem 2.5rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:1.1rem; transition:transform 0.3s ease,box-shadow 0.3s ease; box-shadow:0 4px 20px rgba(230,57,70,0.4); }
+    .cta-button:hover { transform:translateY(-5px) scale(1.05); box-shadow:0 8px 30px rgba(230,57,70,0.5); }
+    .trust-badges { display:flex; justify-content:center; gap:15px; margin-bottom:30px; flex-wrap:wrap; }
+    .trust-badge { display:flex; align-items:center; gap:8px; background:white; border:1px solid #e2e8f0; padding:8px 16px; border-radius:50px; font-size:0.9rem; color:#475569; font-weight:500; box-shadow:0 2px 4px rgba(0,0,0,0.02); }
+    .news-ticker { background:var(--accent-color); color:white; padding:12px 0; text-align:center; font-weight:500; font-size:0.9rem; overflow:hidden; white-space:nowrap; border-radius:50px; }
+    .news-ticker span { display:inline-block; animation:ticker 20s linear infinite; }
+    @keyframes ticker { 0% { transform:translateX(100%); } 100% { transform:translateX(-100%); } }
+    .categories-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
+    .category-card { text-align:center; padding:2rem 1rem; border-radius:16px; transition:0.3s; cursor:pointer; text-decoration:none; color:inherit; }
+    .category-card:hover { transform:translateY(-5px); box-shadow:var(--shadow); }
+    .category-card i { font-size:2.5rem; margin-bottom:1rem; }
+    .category-card.breaking { background:linear-gradient(135deg,#fee2e2,#fecaca); } .category-card.breaking i { color:#e63946; }
+    .category-card.trending { background:linear-gradient(135deg,#fef3c7,#fde68a); } .category-card.trending i { color:#d97706; }
+    .category-card.viral { background:linear-gradient(135deg,#ede9fe,#ddd6fe); } .category-card.viral i { color:#7c3aed; }
+    .category-card.world { background:linear-gradient(135deg,#d1fae5,#a7f3d0); } .category-card.world i { color:#059669; }
+    .category-card.tech { background:linear-gradient(135deg,#e0f2fe,#bae6fd); } .category-card.tech i { color:#0284c7; }
+    .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; }
+    .feature-card { background:#f8fafc; border:1px solid #e2e8f0; border-radius:16px; padding:35px 30px; transition:all 0.3s ease; text-align:center; }
+    .feature-card:hover { transform:translateY(-5px); background:#ffffff; border-color:var(--primary-color); box-shadow:0 20px 40px rgba(0,0,0,0.05); }
+    .icon-wrapper { width:60px; height:60px; background:rgba(230,57,70,0.1); color:var(--primary-color); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; margin:0 auto 25px; transition:all 0.3s ease; }
+    .feature-card:hover .icon-wrapper { background:var(--primary-color); color:#ffffff; transform:scale(1.1) rotate(3deg); }
+    .feature-card h3 { font-size:1.25rem; font-weight:700; color:#1e293b; margin-bottom:12px; }
+    .feature-card p { font-size:0.95rem; color:#64748b; line-height:1.6; }
+    .testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem; }
+    .t-card { background:#ffffff; border:1px solid #e2e8f0; border-radius:16px; padding:2rem; transition:transform 0.3s ease,box-shadow 0.3s ease; }
+    .t-card:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(0,0,0,0.05); }
+    .t-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; }
+    .stars { color:#fbbf24; }
+    .t-quote { font-size:1.05rem; color:#1e293b; line-height:1.7; font-style:italic; margin-bottom:2rem; }
+    .t-footer { display:flex; align-items:center; gap:12px; }
+    .avatar-circle { width:48px; height:48px; border-radius:50%; color:white; display:flex; align-items:center; justify-content:center; font-weight:700; }
+    .faq-container { max-width:800px; margin:0 auto; }
+    .faq-item { margin-bottom:1rem; border-radius:10px; border:1px solid var(--card-border); background:rgba(255,255,255,0.7); }
+    .faq-question { width:100%; background:none; border:none; text-align:left; padding:1.5rem; font-family:'Poppins',sans-serif; font-size:1.1rem; font-weight:600; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+    .faq-question:hover { color:var(--primary-color); }
+    .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.3s ease-out,padding 0.3s ease-out; }
+    .faq-answer p { padding:0 1.5rem 1.5rem; color:var(--light-text-color); }
+    .faq-item.active .faq-answer { max-height:300px; }
+    .faq-question .icon { transition:transform 0.3s ease; }
+    .faq-item.active .faq-question .icon { transform:rotate(45deg); }
+    .stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; text-align:center; }
+    .stat-card { padding:2rem; background:white; border-radius:16px; border:1px solid #e2e8f0; }
+    .stat-card h3 { font-size:2.5rem; color:var(--primary-color); font-weight:800; }
+    .stat-card p { color:var(--light-text-color); }
+    .modern-footer { background-color:#0f172a; color:#94a3b8; padding:4rem 0 0; }
+    .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:3rem; margin-bottom:3rem; max-width:1200px; margin-left:auto; margin-right:auto; padding:0 1.5rem; }
+    .footer-col h4 { color:#f8fafc; font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1.5rem; }
+    .footer-links { list-style:none; padding:0; display:flex; flex-direction:column; gap:0.8rem; }
+    .footer-links a { color:#94a3b8; text-decoration:none; transition:all 0.2s ease; display:flex; align-items:center; gap:12px; }
+    .footer-links a:hover { color:#f8fafc; transform:translateX(4px); }
+    .social-group { display:flex; gap:1rem; margin-top:1.5rem; }
+    .social-btn { width:40px; height:40px; display:flex; align-items:center; justify-content:center; border-radius:8px; background:rgba(255,255,255,0.05); color:#cbd5e1; transition:all 0.3s ease; text-decoration:none; }
+    .social-btn:hover { background:rgba(230,57,70,0.2); color:var(--primary-color); transform:translateY(-3px); }
+    .footer-bottom { border-top:1px solid #1e293b; padding:2rem 1.5rem; text-align:center; }
+    .scroll-to-top { position:fixed; bottom:30px; right:30px; background:linear-gradient(45deg,var(--primary-color),var(--secondary-color)); color:#fff; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; z-index:100; opacity:0; visibility:hidden; transform:translateY(20px); transition:opacity 0.3s,visibility 0.3s,transform 0.3s,box-shadow 0.3s; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+    .scroll-to-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
+    .scroll-to-top:hover { box-shadow:0 6px 20px rgba(230,57,70,0.5); transform:translateY(-5px); }
+    .mobile-nav { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(244,247,252,0.85); backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px); z-index:998; display:flex; flex-direction:column; justify-content:center; align-items:center; opacity:0; visibility:hidden; transition:opacity 0.4s ease,visibility 0.4s ease; }
+    .mobile-nav.active { opacity:1; visibility:visible; }
+    .mobile-nav a { font-size:1.8rem; font-weight:600; color:var(--text-color); text-decoration:none; margin:1.5rem 0; transition:color 0.3s ease; }
+    .mobile-nav a:hover { color:var(--primary-color); }
+    .close-btn { position:absolute; top:30px; right:30px; cursor:pointer; background:none; border:none; }
+    .blog-posts-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; }
+    .blog-post-card { background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 6px rgba(0,0,0,0.05); transition:transform 0.3s ease,box-shadow 0.3s ease; }
+    .blog-post-card:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(0,0,0,0.1); }
+    .blog-post-card img { width:100%; height:200px; object-fit:cover; }
+    .blog-post-content { padding:1.5rem; }
+    .post-category { display:inline-block; background:rgba(230,57,70,0.1); color:var(--primary-color); padding:4px 12px; border-radius:50px; font-size:0.75rem; font-weight:600; margin-bottom:10px; }
+    .blog-post-content h3 { margin-bottom:0.5rem; }
+    .blog-post-content h3 a { color:var(--text-color); text-decoration:none; }
+    .blog-post-content h3 a:hover { color:var(--primary-color); }
+    .read-more { color:var(--primary-color); font-weight:600; text-decoration:none; }
+    .read-more:hover { text-decoration:underline; }
+    .newsletter-box { max-width:500px; margin:0 auto; text-align:center; }
+    .newsletter-box input { width:100%; padding:1rem; border:2px solid #e2e8f0; border-radius:50px; font-family:'Poppins',sans-serif; font-size:1rem; margin-bottom:1rem; outline:none; transition:border 0.3s; }
+    .newsletter-box input:focus { border-color:var(--primary-color); }
+    .post-page { max-width:800px; margin:0 auto; background:white; border-radius:16px; padding:2rem; box-shadow:0 4px 6px rgba(0,0,0,0.05); }
+    .post-page h2 { font-size:2rem; margin-bottom:1rem; color:var(--text-color); }
+    .post-page .post-meta { color:var(--light-text-color); font-size:0.9rem; margin-bottom:1.5rem; }
+    .post-page .post-body { line-height:1.9; font-size:1.1rem; color:var(--text-color); }
+    .post-page .post-body img { max-width:100%; border-radius:12px; margin:1rem 0; }
+    @media (max-width:992px) {
+        .header .nav { display:none; }
+        .menu-toggle { display:block; z-index:999; }
+        #home h1 { font-size:2.8rem; }
+        .footer-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:768px) {
+        section { padding:80px 0; }
+        .section-title { font-size:2rem; }
+        #home h1 { font-size:2.2rem; }
+        .features-grid { grid-template-columns:1fr; }
+        .testimonials-grid { grid-template-columns:1fr; }
+        .footer-grid { grid-template-columns:1fr; text-align:center; }
+        .categories-grid { grid-template-columns:1fr 1fr; }
+    }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+    ]]></b:skin>
+</head>
+
+<body>
+    <div id='particle-container'></div>
+    <div class='background-shapes'>
+        <div class='shape shape1'></div>
+        <div class='shape shape2'></div>
+    </div>
+    <div id='progress-scroller'></div>
+
+    <header class='header'>
+        <a class='logo' href='#home'>NewsFacts<span>Boom</span></a>
+        <nav class='nav'>
+            <a href='#home'>Home</a>
+            <div class='dropdown'>
+                <a href='#'>Categories ▾</a>
+                <div class='dropdown-content'>
+                    <a href='/search/label/Breaking'>Breaking News</a>
+                    <a href='/search/label/Trending'>Trending</a>
+                    <a href='/search/label/Viral'>Viral Stories</a>
+                    <a href='/search/label/World'>World News</a>
+                    <a href='/search/label/Tech'>Tech Updates</a>
+                    <a href='/search/label/Entertainment'>Entertainment</a>
+                </div>
+            </div>
+            <a href='#categories'>Topics</a>
+            <a href='#blog'>Latest News</a>
+            <a href='#newsletter'>Subscribe</a>
+            <a href='#faq'>FAQ</a>
+        </nav>
+        <button aria-label='Open menu' class='menu-toggle'>
+            <svg fill='none' height='24' viewBox='0 0 24 24' width='24'><path d='M4 6H20M4 12H20M4 18H20' stroke='#333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/></svg>
+        </button>
+    </header>
+
+    <nav class='mobile-nav' id='mobile-nav'>
+        <button aria-label='Close menu' class='close-btn'>
+            <svg fill='none' height='24' viewBox='0 0 24 24' width='24'><path d='M18 6L6 18M6 6L18 18' stroke='#333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/></svg>
+        </button>
+        <a href='#home'>Home</a>
+        <a href='#categories'>Topics</a>
+        <a href='#blog'>Latest News</a>
+        <a href='#newsletter'>Subscribe</a>
+        <a href='#faq'>FAQ</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id='home'>
+        <div class='container'>
+            <div class='news-ticker' style='margin-bottom:30px;'>
+                <span>🔥 Breaking: Global Summit 2026 | 🎬 Oscar Nominations | 📱 iPhone 18 Launch | 🌍 Climate Action | 🏆 World Cup Finals</span>
+            </div>
+            <h1>Stay Informed with<br/><span style='color:var(--accent-color);font-size:2rem;'>NewsFactsBoom</span></h1>
+            <div class='trust-badges'>
+                <div class='trust-badge'><i class='fas fa-bolt' style='color:#eab308;'></i> Real-Time Updates</div>
+                <div class='trust-badge'><i class='fas fa-check-circle' style='color:#059669;'></i> Verified Facts</div>
+                <div class='trust-badge'><i class='fas fa-globe' style='color:#0284c7;'></i> Global Coverage</div>
+            </div>
+            <p>Your trusted source for <strong>breaking news, trending stories, viral updates, world events, and tech innovations</strong> — all in one place.</p>
+            <a class='cta-button' href='#blog'><i class='fas fa-newspaper'></i> Read Latest News</a>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section id='categories' style='background:#ffffff;'>
+        <div class='container'>
+            <h2 class='section-title'>Explore Our <span style='color:var(--primary-color);'>Categories</span></h2>
+            <p class='section-subtitle'>Dive into the stories that matter most to you.</p>
+            <div class='categories-grid'>
+                <a href='/search/label/Breaking' class='category-card breaking'>
+                    <i class='fa-solid fa-fire'></i>
+                    <h3>Breaking News</h3>
+                    <p style='font-size:0.85rem;color:#475569;'>Latest headlines &amp; urgent updates</p>
+                </a>
+                <a href='/search/label/Trending' class='category-card trending'>
+                    <i class='fa-solid fa-arrow-trend-up'></i>
+                    <h3>Trending</h3>
+                    <p style='font-size:0.85rem;color:#475569;'>What's hot right now</p>
+                </a>
+                <a href='/search/label/Viral' class='category-card viral'>
+                    <i class='fa-solid fa-share-nodes'></i>
+                    <h3>Viral Stories</h3>
+                    <p style='font-size:0.85rem;color:#475569;'>Stories everyone's talking about</p>
+                </a>
+                <a href='/search/label/World' class='category-card world'>
+                    <i class='fa-solid fa-earth-americas'></i>
+                    <h3>World News</h3>
+                    <p style='font-size:0.85rem;color:#475569;'>Global events &amp; politics</p>
+                </a>
+                <a href='/search/label/Tech' class='category-card tech'>
+                    <i class='fa-solid fa-microchip'></i>
+                    <h3>Tech Updates</h3>
+                    <p style='font-size:0.85rem;color:#475569;'>Innovation &amp; gadgets</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id='features' style='background:rgba(230,57,70,0.02);'>
+        <div class='container'>
+            <h2 class='section-title'>Why <span style='color:var(--primary-color);'>NewsFactsBoom</span>?</h2>
+            <p class='section-subtitle'>We deliver news that matters — fast, accurate, and engaging.</p>
+            <div class='features-grid'>
+                <div class='feature-card'>
+                    <div class='icon-wrapper'><i class='fa-solid fa-rocket'></i></div>
+                    <h3>Breaking News First</h3>
+                    <p>Get the <strong>latest stories</strong> before anyone else.</p>
+                </div>
+                <div class='feature-card'>
+                    <div class='icon-wrapper'><i class='fa-solid fa-shield-check'></i></div>
+                    <h3>Fact-Verified</h3>
+                    <p>Every story is <strong>verified</strong> by our editorial team.</p>
+                </div>
+                <div class='feature-card'>
+                    <div class='icon-wrapper'><i class='fa-solid fa-globe'></i></div>
+                    <h3>Global Reach</h3>
+                    <p>News from <strong>every corner</strong> of the world.</p>
+                </div>
+                <div class='feature-card'>
+                    <div class='icon-wrapper'><i class='fa-solid fa-mobile-screen'></i></div>
+                    <h3>Mobile Ready</h3>
+                    <p>Read comfortably on <strong>any device</strong>.</p>
+                </div>
+                <div class='feature-card'>
+                    <div class='icon-wrapper'><i class='fa-solid fa-users'></i></div>
+                    <h3>Community Driven</h3>
+                    <p>Join <strong>millions of readers</strong> worldwide.</p>
+                </div>
+                <div class='feature-card'>
+                    <div class='icon-wrapper'><i class='fa-solid fa-bell'></i></div>
+                    <h3>Daily Digest</h3>
+                    <p>Get <strong>top stories</strong> in your inbox.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG POSTS -->
+    <section id='blog' style='background:#ffffff;'>
+        <div class='container'>
+            <h2 class='section-title'>📰 Latest <span style='color:var(--primary-color);'>News</span></h2>
+            <p class='section-subtitle'>Stay updated with our most recent articles and stories.</p>
+            
+            <b:section id='blog-posts' maxwidgets='1' showaddelement='no'>
+                <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2'>
+                    <b:includable id='main' var='this'>
+                        <b:if cond='data:blog.pageType == &quot;index&quot;'>
+                            <div class='blog-posts-grid'>
+                                <b:loop values='data:posts' var='post'>
+                                    <div class='blog-post-card'>
+                                        <b:if cond='data:post.featuredImage'>
+                                            <img expr:alt='data:post.title' expr:src='data:post.featuredImage'/>
+                                        </b:if>
+                                        <div class='blog-post-content'>
+                                            <span class='post-category'>News</span>
+                                            <h3><a expr:href='data:post.url'><data:post.title/></a></h3>
+                                            <p style='color:var(--light-text-color);font-size:0.9rem;'><data:post.snippets.short/></p>
+                                            <a class='read-more' expr:href='data:post.url'>Read Full Story <i class='fas fa-arrow-right'></i></a>
+                                        </div>
+                                    </div>
+                                </b:loop>
+                            </div>
+                            <b:include name='nextprev'/>
+                        <b:else/>
+                            <div class='post-page'>
+                                <b:loop values='data:posts' var='post'>
+                                    <span class='post-category'>News</span>
+                                    <h2><data:post.title/></h2>
+                                    <div class='post-meta'>
+                                        <i class='fas fa-user'></i> <data:post.author/> | 
+                                        <i class='fas fa-calendar'></i> <data:post.date/> |
+                                        <i class='fas fa-comments'></i> <data:post.commentsCount/> Comments
+                                    </div>
+                                    <div class='post-body'><data:post.body/></div>
+                                </b:loop>
+                            </div>
+                        </b:if>
+                    </b:includable>
+                    <b:includable id='nextprev' var='this'>
+                        <div style='text-align:center;margin-top:2rem;'>
+                            <b:if cond='data:newerPageUrl'>
+                                <a class='cta-button' expr:href='data:newerPageUrl' style='margin-right:10px;'><i class='fas fa-arrow-left'></i> Newer Posts</a>
+                            </b:if>
+                            <b:if cond='data:olderPageUrl'>
+                                <a class='cta-button' expr:href='data:olderPageUrl'>Older Posts <i class='fas fa-arrow-right'></i></a>
+                            </b:if>
+                        </div>
+                    </b:includable>
+                </b:widget>
+            </b:section>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section id='stats' style='background:var(--accent-color);color:white;padding:4rem 0;'>
+        <div class='container'>
+            <div class='stats-grid'>
+                <div class='stat-card' style='background:rgba(255,255,255,0.1);border:none;'>
+                    <h3 style='color:#fbbf24;'>100K+</h3>
+                    <p style='color:#e2e8f0;'>Daily Readers</p>
+                </div>
+                <div class='stat-card' style='background:rgba(255,255,255,0.1);border:none;'>
+                    <h3 style='color:#fbbf24;'>25K+</h3>
+                    <p style='color:#e2e8f0;'>Articles Published</p>
+                </div>
+                <div class='stat-card' style='background:rgba(255,255,255,0.1);border:none;'>
+                    <h3 style='color:#fbbf24;'>150+</h3>
+                    <p style='color:#e2e8f0;'>Countries Reached</p>
+                </div>
+                <div class='stat-card' style='background:rgba(255,255,255,0.1);border:none;'>
+                    <h3 style='color:#fbbf24;'>24/7</h3>
+                    <p style='color:#e2e8f0;'>News Coverage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id='testimonials' style='padding:5rem 0;'>
+        <div class='container'>
+            <h2 class='section-title'>What Our <span style='color:var(--primary-color);'>Readers Say</span></h2>
+            <p class='section-subtitle'>Join millions of satisfied readers worldwide.</p>
+            <div class='testimonials-grid'>
+                <div class='t-card'>
+                    <div class='t-header'><div class='stars'><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i></div></div>
+                    <p class='t-quote'>"NewsFactsBoom is my go-to for <strong>breaking news</strong>. Always first with the latest updates."</p>
+                    <div class='t-footer'><div class='avatar-circle' style='background:linear-gradient(135deg,#e63946,#ff6b6b);'>SD</div><div><h4 style='margin:0;'>Sarah D.</h4><span style='color:#64748b;font-size:0.85rem;'>Journalist</span></div></div>
+                </div>
+                <div class='t-card'>
+                    <div class='t-header'><div class='stars'><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i></div></div>
+                    <p class='t-quote'>"Love the <strong>trending section</strong>! I never miss what's viral and trending worldwide."</p>
+                    <div class='t-footer'><div class='avatar-circle' style='background:linear-gradient(135deg,#1d3557,#457b9d);'>MK</div><div><h4 style='margin:0;'>Mike K.</h4><span style='color:#64748b;font-size:0.85rem;'>Content Creator</span></div></div>
+                </div>
+                <div class='t-card'>
+                    <div class='t-header'><div class='stars'><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i></div></div>
+                    <p class='t-quote'>"The <strong>world news coverage</strong> is excellent. Reliable and fast reporting."</p>
+                    <div class='t-footer'><div class='avatar-circle' style='background:linear-gradient(135deg,#fbbf24,#f59e0b);'>LP</div><div><h4 style='margin:0;'>Lisa P.</h4><span style='color:#64748b;font-size:0.85rem;'>Teacher</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section id='newsletter' style='background:rgba(230,57,70,0.03);'>
+        <div class='container'>
+            <div class='glass-card newsletter-box'>
+                <h2 class='section-title'>📬 Subscribe to Our <span style='color:var(--primary-color);'>Newsletter</span></h2>
+                <p class='section-subtitle'>Get the latest news delivered straight to your inbox every morning.</p>
+                <form action='#' method='post'>
+                    <input type='email' placeholder='Enter your email address' required='required'/>
+                    <button type='submit' class='cta-button' style='width:100%;border:none;cursor:pointer;'><i class='fas fa-paper-plane'></i> Subscribe Now</button>
+                </form>
+                <p style='font-size:0.8rem;color:var(--light-text-color);margin-top:1rem;'>No spam, unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id='faq'>
+        <div class='container'>
+            <h2 class='section-title'>Frequently Asked <span style='color:var(--primary-color);'>Questions</span></h2>
+            <p class='section-subtitle'>Everything you need to know about NewsFactsBoom.</p>
+            <div class='faq-container'>
+                <div class='faq-item'><button class='faq-question'>What type of news does NewsFactsBoom cover?<span class='icon'><i class='fas fa-plus'></i></span></button><div class='faq-answer'><p>Breaking news, trending stories, viral content, world events, tech updates, and entertainment.</p></div></div>
+                <div class='faq-item'><button class='faq-question'>How often is the site updated?<span class='icon'><i class='fas fa-plus'></i></span></button><div class='faq-answer'><p>We update 24/7 with breaking news and fresh articles every hour.</p></div></div>
+                <div class='faq-item'><button class='faq-question'>Is NewsFactsBoom free?<span class='icon'><i class='fas fa-plus'></i></span></button><div class='faq-answer'><p>Yes! All our articles are 100% free to read.</p></div></div>
+                <div class='faq-item'><button class='faq-question'>Can I contribute as a writer?<span class='icon'><i class='fas fa-plus'></i></span></button><div class='faq-answer'><p>Absolutely! Contact us with your writing samples.</p></div></div>
+                <div class='faq-item'><button class='faq-question'>How do you verify news?<span class='icon'><i class='fas fa-plus'></i></span></button><div class='faq-answer'><p>Our editorial team verifies every story through multiple credible sources.</p></div></div>
+                <div class='faq-item'><button class='faq-question'>Is the newsletter free?<span class='icon'><i class='fas fa-plus'></i></span></button><div class='faq-answer'><p>Yes! Free daily newsletter, unsubscribe anytime.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id='about' style='padding:4rem 1.5rem;'>
+        <div class='container' style='max-width:1000px;margin:0 auto;'>
+            <div class='glass-card' style='text-align:center;padding:3.5rem 2rem;'>
+                <div style='width:80px;height:80px;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:-70px auto 20px;border:4px solid white;'><i class='fa-solid fa-newspaper'></i></div>
+                <span style='display:inline-block;background:#fef2f2;color:var(--primary-color);font-size:0.8rem;font-weight:600;padding:0.4rem 0.8rem;border-radius:50px;margin-bottom:1rem;'><i class='fa-solid fa-check'></i> Trusted News Source</span>
+                <h2 class='section-title'>About <span style='color:var(--primary-color);'>NewsFactsBoom</span></h2>
+                <p style='max-width:700px;margin:0 auto 1rem;font-size:1.15rem;'>
+                    NewsFactsBoom is your <strong>premier destination</strong> for breaking news, trending stories, viral content, and world events.
+                </p>
+                <p style='max-width:750px;margin:0 auto 2.5rem;color:#64748b;'>
+                    Founded with a mission to deliver <strong>fast, accurate, and engaging news</strong>, our team works around the clock to bring you stories that matter — from every corner of the globe.
+                </p>
+                <div style='display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;border-top:1px solid #f1f5f9;padding-top:2rem;'>
+                    <span><i class='fa-solid fa-check-circle' style='color:var(--primary-color);'></i> Verified Facts</span>
+                    <span><i class='fa-solid fa-bolt' style='color:var(--primary-color);'></i> Real-Time</span>
+                    <span><i class='fa-solid fa-globe' style='color:var(--primary-color);'></i> Global Reach</span>
+                    <span><i class='fa-solid fa-heart' style='color:var(--primary-color);'></i> Reader First</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class='modern-footer'>
+        <div class='footer-grid'>
+            <div class='footer-col'>
+                <h4 style='font-size:1.2rem;'><i class='fa-solid fa-newspaper'></i> NewsFacts<span style='color:var(--primary-color);'>Boom</span></h4>
+                <p>Delivering breaking news, trending stories, and viral updates from around the world.</p>
+                <div class='social-group'>
+                    <a class='social-btn' href='#'><i class='fa-brands fa-facebook-f'></i></a>
+                    <a class='social-btn' href='#'><i class='fa-brands fa-twitter'></i></a>
+                    <a class='social-btn' href='#'><i class='fa-brands fa-instagram'></i></a>
+                    <a class='social-btn' href='#'><i class='fa-brands fa-youtube'></i></a>
+                </div>
+            </div>
+            <div class='footer-col'>
+                <h4>News Categories</h4>
+                <ul class='footer-links'>
+                    <li><a href='/search/label/Breaking'><i class='fa-solid fa-fire'></i> Breaking News</a></li>
+                    <li><a href='/search/label/Trending'><i class='fa-solid fa-arrow-trend-up'></i> Trending</a></li>
+                    <li><a href='/search/label/Viral'><i class='fa-solid fa-share-nodes'></i> Viral Stories</a></li>
+                    <li><a href='/search/label/World'><i class='fa-solid fa-earth-americas'></i> World News</a></li>
+                    <li><a href='/search/label/Tech'><i class='fa-solid fa-microchip'></i> Tech Updates</a></li>
+                </ul>
+            </div>
+            <div class='footer-col'>
+                <h4>Quick Links</h4>
+                <ul class='footer-links'>
+                    <li><a href='#home'><i class='fa-solid fa-house'></i> Home</a></li>
+                    <li><a href='#blog'><i class='fa-solid fa-newspaper'></i> Latest News</a></li>
+                    <li><a href='#newsletter'><i class='fa-solid fa-envelope'></i> Newsletter</a></li>
+                    <li><a href='#faq'><i class='fa-solid fa-question-circle'></i> FAQ</a></li>
+                    <li><a href='#about'><i class='fa-solid fa-circle-info'></i> About Us</a></li>
+                </ul>
+            </div>
+            <div class='footer-col'>
+                <h4>Contact &amp; Legal</h4>
+                <ul class='footer-links'>
+                    <li><a href='#'><i class='fa-solid fa-envelope'></i> hello@newsfactsboom.com</a></li>
+                    <li><a href='#'><i class='fa-solid fa-file-contract'></i> Terms of Service</a></li>
+                    <li><a href='#'><i class='fa-solid fa-user-shield'></i> Privacy Policy</a></li>
+                    <li><a href='#'><i class='fa-solid fa-cookie'></i> Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class='footer-bottom'>
+            <p>Copyright &#169; 2026 <strong>NewsFactsBoom</strong>. All Rights Reserved.</p>
+            <p style='font-size:0.8rem;opacity:0.7;'>Delivering accurate news with integrity. Powered by passionate journalists worldwide.</p>
+        </div>
+    </footer>
+
+    <a aria-label='Scroll to top' class='scroll-to-top' href='#home'><i class='fas fa-arrow-up'></i></a>
+
+    <!-- ✅ Smartlink -->
+    <a href='https://socialconventcontext.com/iiv98wbc?key=35d55a22876614dff3c205078b838a84' rel='nofollow' style='display:none;'>Smartlink</a>
+
+    <!-- ✅ Social Bar -->
+    <script src='https://socialconventcontext.com/bf/c6/8c/bfc68c8260bbbda9f8ebccc9ef1c725d.js'></script>
+
+    <script>
+    //<![CDATA[
+    document.addEventListener('DOMContentLoaded',function(){
+        var pc=document.getElementById('particle-container'),th=false;
+        function cp(x,y){
+            var p=document.createElement('div');p.className='particle';
+            var s=Math.random()*6+2;
+            p.style.width=s+'px';p.style.height=s+'px';p.style.left=x+'px';p.style.top=y+'px';
+            var a=p.animate([{transform:'translate(0,0)',opacity:1},{transform:'translate('+(Math.random()-0.5)*60+'px,180px)',opacity:0}],{duration:1200+Math.random()*800,easing:'ease-out'});
+            a.onfinish=function(){p.remove();};pc.appendChild(p);
+        }
+        document.addEventListener('mousemove',function(e){if(!th){cp(e.clientX,e.clientY);th=true;setTimeout(function(){th=false;},50);}});
+        var mt=document.querySelector('.menu-toggle'),cb=document.querySelector('.close-btn'),mn=document.getElementById('mobile-nav');
+        mt.addEventListener('click',function(){mn.classList.add('active');});
+        cb.addEventListener('click',function(){mn.classList.remove('active');});
+        mn.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){mn.classList.remove('active');});});
+        var hd=document.querySelector('.header');
+        window.addEventListener('scroll',function(){if(window.scrollY>50)hd.classList.add('scrolled');else hd.classList.remove('scrolled');});
+        var sb=document.querySelector('.scroll-to-top');
+        window.addEventListener('scroll',function(){if(window.scrollY>300)sb.classList.add('visible');else sb.classList.remove('visible');});
+        document.querySelectorAll('.faq-item').forEach(function(i){
+            i.querySelector('.faq-question').addEventListener('click',function(){
+                var ac=document.querySelector('.faq-item.active');
+                if(ac&&ac!==i)ac.classList.remove('active');
+                i.classList.toggle('active');
+            });
+        });
+        var sc=document.getElementById('progress-scroller');
+        window.addEventListener('scroll',function(){
+            var st=document.documentElement.scrollTop,sh=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+            sc.style.width=(st/sh)*100+'%';
+        });
+    });
+    //]]>
+    </script>
+</body>
+</html>
